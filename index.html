@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omidullah Karimi | M&E, Finance, Translation & Local Guide</title>
+  <meta name="description" content="Personal portfolio website of Omidullah Karimi, M&E, Admin & Finance, Reporting, Translation and Local Guide professional based in Mazar-e-Sharif, Afghanistan." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --brand: #38bdf8;
+      --brand-2: #22c55e;
+      --accent: #f59e0b;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.16), transparent 32%),
+        linear-gradient(135deg, #020617 0%, #0f172a 46%, #111827 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px);
+      background: rgba(2, 6, 23, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.4px; }
+    .logo-mark {
+      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #020617; box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25);
+    }
+
+    .nav-links { display: flex; gap: 18px; align-items: center; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--white); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 18px; border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white); font-weight: 700; transition: 0.25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.14); }
+    .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #020617; border: none; }
+
+    .hero { padding: 86px 0 54px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px;
+      border-radius: 999px; color: #e0f2fe;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      margin-bottom: 20px; font-size: 14px;
+    }
+
+    h1 { font-size: clamp(38px, 6vw, 70px); line-height: 1.03; letter-spacing: -2px; margin-bottom: 20px; }
+    .gradient-text {
+      background: linear-gradient(135deg, #7dd3fc, #86efac, #fbbf24);
+      -webkit-background-clip: text; color: transparent;
+    }
+
+    .hero p { color: var(--muted); max-width: 680px; font-size: 18px; margin-bottom: 26px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+    .quick-info { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 14px; }
+    .quick-info span {
+      padding: 8px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-card {
+      position: relative; padding: 24px; border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+      border: 1px solid var(--card-border); box-shadow: var(--shadow); overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: ""; position: absolute; inset: -80px -80px auto auto; width: 190px; height: 190px;
+      border-radius: 50%; background: rgba(56, 189, 248, 0.22); filter: blur(10px);
+    }
+
+    .avatar {
+      width: 170px; height: 170px; border-radius: 50%; margin: 0 auto 18px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(56,189,248,0.9), rgba(34,197,94,0.9));
+      color: #020617; font-size: 52px; font-weight: 900;
+      border: 8px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .profile-card h2 { text-align: center; font-size: 26px; margin-bottom: 6px; }
+    .profile-card .role { text-align: center; color: var(--muted); margin-bottom: 20px; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+    .stat {
+      padding: 14px; border-radius: 16px; background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .stat strong { display: block; font-size: 24px; color: var(--white); }
+    .stat span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 56px 0; }
+    .section-title {
+      display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 24px;
+    }
+    .section-title h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
+    .section-title p { color: var(--muted); max-width: 600px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+    .card {
+      padding: 24px; border-radius: var(--radius); background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+    }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p, .card li { color: var(--muted); font-size: 15px; }
+
+    .icon {
+      width: 48px; height: 48px; display: grid; place-items: center; border-radius: 16px;
+      background: rgba(56, 189, 248, 0.14); margin-bottom: 16px; font-size: 24px;
+    }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill {
+      padding: 9px 12px; border-radius: 999px; background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1); color: #e2e8f0; font-size: 14px;
+    }
+
+    .timeline { display: grid; gap: 16px; }
+    .timeline-item {
+      position: relative; padding: 22px; border-radius: var(--radius);
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.11);
+    }
+    .timeline-item .date { color: var(--brand); font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .timeline-item h3 { margin-bottom: 8px; }
+    .timeline-item ul { padding-left: 20px; margin-top: 8px; }
+
+    .service-card { min-height: 210px; }
+    .portfolio-item { display: flex; flex-direction: column; justify-content: space-between; min-height: 210px; }
+    .tag {
+      display: inline-flex; width: fit-content; padding: 6px 10px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; background: rgba(245, 158, 11, 0.14);
+      color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.25); margin-bottom: 12px;
+    }
+
+    .contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .contact-list { display: grid; gap: 12px; margin-top: 18px; }
+    .contact-list a, .contact-list div {
+      padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1); color: var(--muted);
+    }
+
+    .cta {
+      padding: 34px; border-radius: 30px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.24), rgba(34, 197, 94, 0.18));
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    footer {
+      padding: 28px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center; font-size: 14px;
+    }
+
+    .mobile-menu {
+      display: none; border: none; color: white; background: rgba(255,255,255,0.08);
+      padding: 10px 12px; border-radius: 12px; cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .grid-3, .grid-2, .contact-box { grid-template-columns: 1fr; }
+      .nav-links {
+        display: none; position: absolute; left: 4%; right: 4%; top: 74px; padding: 18px;
+        border-radius: 18px; background: rgba(2, 6, 23, 0.96);
+        border: 1px solid rgba(255,255,255,0.12); flex-direction: column; align-items: flex-start;
+      }
+      .nav-links.active { display: flex; }
+      .mobile-menu { display: inline-block; }
+      .section-title { display: block; }
+      .section-title p { margin-top: 10px; }
+      .hero { padding-top: 56px; }
+    }
+
+    @media print {
+      header, .hero-actions, .mobile-menu { display: none; }
+      body { background: white; color: black; }
+      .card, .timeline-item, .profile-card, .cta { background: white; color: black; border: 1px solid #ddd; box-shadow: none; }
+      .card p, .card li, .profile-card .role, .quick-info, .section-title p, .contact-list a, .contact-list div { color: #333; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home" aria-label="Omidullah Karimi Home">
+        <span class="logo-mark">OK</span>
+        <span>Omidullah Karimi</span>
+      </a>
+      <button class="mobile-menu" onclick="toggleMenu()">Menu</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">📍 Based in Mazar-e-Sharif, Afghanistan</div>
+          <h1>M&E, Admin & Finance, Reporting, Translation and <span class="gradient-text">Local Guide</span></h1>
+          <p>
+            I help humanitarian organizations, development projects, visitors, and clients with field monitoring,
+            data collection, reporting, administrative support, translation, and local coordination across northern Afghanistan.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:omidulahkarimi1991@gmail.com">Hire / Contact Me</a>
+            <a class="btn" href="#portfolio">View Work Samples</a>
+          </div>
+          <div class="quick-info">
+            <span>5+ Years Experience</span>
+            <span>Kobo / ODK</span>
+            <span>Dari • Pashto • Uzbek • English</span>
+            <span>Finance & Accounting Master’s Student</span>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="avatar">OK</div>
+          <h2>Omidullah Karimi</h2>
+          <p class="role">Field Monitoring • Project Coordination • Reporting • Translation</p>
+          <div class="stat-grid">
+            <div class="stat"><strong>5+</strong><span>Years Field Experience</span></div>
+            <div class="stat"><strong>150+</strong><span>CBPM Sessions</span></div>
+            <div class="stat"><strong>5,000+</strong><span>People Surveyed</span></div>
+            <div class="stat"><strong>4</strong><span>Main Languages</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <p>A practical profile for NGOs, companies, freelance clients, researchers, and visitors looking for reliable local support.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Professional Profile</h3>
+            <p>
+              I am an experienced field researcher and monitoring professional with more than five years of experience in humanitarian and development work. My background includes household assessments, KIIs, FGDs, Kobo-based surveys, protection monitoring, project coordination, data verification, and field reporting. I have worked with CHA, Women for Afghan Women / UNHCR CBPM Project, YHDO, Turkistan University, and OXUS Afghanistan.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Education & Direction</h3>
+            <p>
+              I am currently pursuing a Master of Finance & Accounting at Balkh University. My professional direction combines M&E, reporting, finance documentation, office administration, translation, and local guidance services. My goal is to support organizations and clients with accurate data, clear communication, ethical fieldwork, and dependable coordination.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>Core Skills</h2>
+          <p>Skills useful for NGO projects, field operations, reporting assignments, finance/admin support, translation, and freelance services.</p>
+        </div>
+        <div class="card">
+          <div class="skills">
+            <span class="skill">Monitoring & Evaluation</span>
+            <span class="skill">Kobo Toolbox / ODK</span>
+            <span class="skill">Data Collection</span>
+            <span class="skill">KIIs & FGDs</span>
+            <span class="skill">Household Assessments</span>
+            <span class="skill">Field Monitoring</span>
+            <span class="skill">Report Writing</span>
+            <span class="skill">Data Verification</span>
+            <span class="skill">Stakeholder Coordination</span>
+            <span class="skill">Community Engagement</span>
+            <span class="skill">Admin & Finance</span>
+            <span class="skill">Budget Tracking</span>
+            <span class="skill">Financial Documentation</span>
+            <span class="skill">Microsoft Office</span>
+            <span class="skill">Translation</span>
+            <span class="skill">Local Guide Services</span>
+            <span class="skill">Graphic Design</span>
+            <span class="skill">Digital Documentation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Experience</h2>
+          <p>A focused overview of my practical experience in field operations, humanitarian projects, admin/finance, and data work.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="date">Mar 2025 – Present</div>
+            <h3>Field Monitor — CHA, Balkh</h3>
+            <ul>
+              <li>Conduct quantitative and qualitative assessments with vulnerable groups.</li>
+              <li>Monitor field activities, document community concerns, and report protection trends.</li>
+              <li>Coordinate with community leaders and humanitarian actors for multi-sectoral assessments.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">Feb 2022 – Dec 2024</div>
+            <h3>Protection Monitor — Women for Afghan Women / UNHCR CBPM Project</h3>
+            <ul>
+              <li>Conducted 150+ CBPM sessions across Balkh and Samangan using FGDs, KIIs, HHAs, and Kobo tools.</li>
+              <li>Surveyed more than 5,000 individuals to support data-driven protection analysis.</li>
+              <li>Supported 15,000 vulnerable families through cash assistance monitoring and transparency checks.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">Jun 2021 – Feb 2022</div>
+            <h3>Admin & Finance Officer — Turkistan University</h3>
+            <ul>
+              <li>Supported administrative operations, financial documentation, record keeping, and office coordination.</li>
+              <li>Assisted with budget tracking, documentation control, and daily finance/admin processes.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">Jan 2019 – May 2020</div>
+            <h3>Loan Administrator — OXUS Afghanistan</h3>
+            <ul>
+              <li>Supported loan administration, client documentation, financial records, and credit-related processes.</li>
+              <li>Worked with field and office teams to maintain accurate client and loan information.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">Mar 2016 – Dec 2017</div>
+            <h3>M&E Assistant / Outreach Team Supervisor — YHDO, Kunduz</h3>
+            <ul>
+              <li>Collected, verified, and analyzed HIV prevention data from target groups.</li>
+              <li>Supervised outreach teams, prepared activity plans, and supported field mapping and reporting.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Clear, practical services for organizations, projects, researchers, visitors, and freelance clients.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card service-card"><div class="icon">📊</div><h3>M&E & Data Collection</h3><p>Kobo/ODK surveys, KIIs, FGDs, household assessments, field monitoring, verification, and activity tracking.</p></div>
+          <div class="card service-card"><div class="icon">📝</div><h3>Reporting & Documentation</h3><p>Field reports, monitoring reports, success stories, translation of documents, and clean project documentation.</p></div>
+          <div class="card service-card"><div class="icon">💼</div><h3>Admin & Finance Support</h3><p>Budget tracking, finance documentation, office coordination, record keeping, and compliance support.</p></div>
+          <div class="card service-card"><div class="icon">🌐</div><h3>Translation</h3><p>Dari, Pashto, Uzbek, and English support for meetings, field visits, documents, interviews, and local communication.</p></div>
+          <div class="card service-card"><div class="icon">🧭</div><h3>Local Guide</h3><p>Local support for visitors and clients in Mazar-e-Sharif, Balkh, northern and northeastern Afghanistan.</p></div>
+          <div class="card service-card"><div class="icon">🎨</div><h3>Design & Content</h3><p>CV design, basic graphics, digital content, presentation support, and professional profile materials.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <h2>Portfolio / Work Samples</h2>
+          <p>Add your real samples here. Keep sensitive NGO data private; use anonymized or sample documents only.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card portfolio-item"><div><span class="tag">Sample</span><h3>Field Monitoring Report</h3><p>Upload or link an anonymized sample report showing structure, findings, challenges, and recommendations.</p></div><a class="btn" href="#contact">Request Sample</a></div>
+          <div class="card portfolio-item"><div><span class="tag">Sample</span><h3>Kobo / ODK Form</h3><p>Show a sample questionnaire, assessment form, or data collection tool created for field use.</p></div><a class="btn" href="#contact">View Details</a></div>
+          <div class="card portfolio-item"><div><span class="tag">Sample</span><h3>Translation Work</h3><p>Display a short before/after translation sample in Dari, Pashto, Uzbek, or English.</p></div><a class="btn" href="#contact">Ask for Sample</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-title">
+          <h2>Education & Languages</h2>
+          <p>Academic background and language capacity for field communication, reporting, and translation assignments.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Education</h3>
+            <p><strong>Master of Finance & Accounting</strong> — Balkh University, 2024–2026, In Progress</p>
+            <p><strong>Economics, Finance & Banking</strong> — Jawzjan University, 2012–2015</p>
+            <p><strong>Isteqlal High School</strong> — Mazar-e-Sharif, 2009–2011</p>
+          </div>
+          <div class="card">
+            <h3>Languages</h3>
+            <p>Dari — Native</p><p>Uzbek — Native</p><p>Pashto — Excellent</p><p>English — Excellent</p><p>Urdu — Fair</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="cta">
+            <h2>Let’s Work Together</h2>
+            <p>For NGO field assignments, translation, local guidance, reporting, data collection, admin/finance support, or freelance projects, you can contact me directly.</p>
+            <div class="contact-list">
+              <a href="mailto:omidulahkarimi1991@gmail.com">✉ omidulahkarimi1991@gmail.com</a>
+              <a href="tel:+93789100883">📞 +93 (0) 789 100 883</a>
+              <a href="tel:+93729812838">📞 +93 (0) 729 812 838</a>
+              <div>📍 Mazar-e-Sharif, Balkh, Afghanistan</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Quick Message Template</h3>
+            <p>You can copy this text when applying or contacting clients:</p><br />
+            <p>Dear Sir/Madam,<br><br>I am Omidullah Karimi, an experienced M&E, reporting, admin/finance, translation, and local coordination professional based in Mazar-e-Sharif, Afghanistan. You can view my profile and work samples on this website. I would be pleased to support your project or assignment.</p><br />
+            <a class="btn btn-primary" href="mailto:omidulahkarimi1991@gmail.com?subject=Work%20Inquiry%20-%20Omidullah%20Karimi">Send Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="year"></span> Omidullah Karimi. All rights reserved.</div></footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
