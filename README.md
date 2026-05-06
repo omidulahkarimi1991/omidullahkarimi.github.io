@@ -1,0 +1,1 @@
+Humanitarian professional with 7+ years in Field monitoring, community mobilization and M&E across multiple provinces. Skilled in data collection, analysis, reporting, and inclusive protection programs. Fluent in Dari, Pashto, Uzbek, and English, committed to safeguarding vulnerable populations and supporting evidence-based decisions.
